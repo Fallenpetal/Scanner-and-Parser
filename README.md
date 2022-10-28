@@ -9,6 +9,9 @@ The following contains the Scanner and Parser written by Ocaml.
 ```
 (* EXAMPLE: The token stream for a simple "(+ 3 2)" sexpr *)
 let example_stream =  LPAREN ^ SYMBOL("+") ^ NUMBER(3) ^ NUMBER(2) ^ RPAREN ^ eof ()
+
+ parse example_stream
+  = Ok(SList(Atom(Symbol("+"))::Atom(Number(3))::Atom(Number(2))::[])::[])
 ```
 
 
